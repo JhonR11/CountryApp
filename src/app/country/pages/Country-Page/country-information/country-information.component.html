@@ -1,0 +1,40 @@
+<section class="mx-10">
+    <h1 class="text-3xl">[{{country().cca2}}]</h1>
+    <h1 class="text-3xl font-bold">{{country().name}} - {{country().flag}}</h1>
+</section>
+
+<section class="flex flex-col mx-10 my-5">
+<div class="stats shadow">
+  <div class="stat place-items-center">
+    <div class="stat-title">Poblacion</div>
+    <div class="stat-value">{{country().population | number}}</div>
+    <div class="stat-desc">En {{ currentYear()}}</div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Region perteneciente</div>
+    <div class="stat-value">{{country().region}}</div>
+    <div class="stat-desc"></div>
+  </div>
+
+  <div class="stat place-items-center">
+    <div class="stat-title">Sub region</div>
+    <div class="stat-value">{{country().subRegion}}</div>
+    <div class="stat-desc">{{country().region}}</div>
+  </div>
+</div>
+</section>
+
+
+
+<div class="diff aspect-16/9" tabindex="0">
+  <div class="diff-item-1" role="img" tabindex="0">
+    <img alt="daisy" [src]="country().flagSvg" />
+  </div>
+  <div class="diff-item-2" role="img">
+    <img class="blur brightness-75"
+      [alt]="country().name"
+      [src]="country().flagSvg" />
+  </div>
+  <div class="diff-resizer"></div>
+</div>
